@@ -15,7 +15,8 @@ https://openweathermap.org/
 
 ### Maquette 
 
-[Maquette]((/Users/mariam/Documents/Mariam/Professionnelle/École/Master MIAGE/S1/Météo projet "Maquette").
+[Maquette] !(/Users/mariam/Documents/Mariam/Professionnelle/École/Master MIAGE/S1/Météo.assets "Maquette").
+[image](assets1.jpg). 
 
 
 ### Difficultés rencontrées 
