@@ -15,8 +15,11 @@ https://openweathermap.org/
 
 ### Maquette 
 
-![WEATHER](https://user-images.githubusercontent.com/96047669/200964221-d329b4fc-4814-4aa8-9c63-e1c96b5c1f0f.png)
+![maquette](https://user-images.githubusercontent.com/96047669/201073721-ec133251-5b12-4cb2-a1fc-4a627ba50799.png)
 
+### Logo 
+
+![logo](https://user-images.githubusercontent.com/96047669/201073657-141072cd-d85b-4ef6-be97-2c1d9d63e796.png)
 
 
 ### Difficultés rencontrées 
