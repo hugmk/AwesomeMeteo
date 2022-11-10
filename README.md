@@ -19,7 +19,7 @@ https://openweathermap.org/
 
 ### Logo 
 
-![logo](https://user-images.githubusercontent.com/96047669/201073657-141072cd-d85b-4ef6-be97-2c1d9d63e796.png)
+![Logo](https://user-images.githubusercontent.com/96047669/201074208-cb717884-03da-46b1-a1ce-b0e0affdc602.png)
 
 
 ### Difficultés rencontrées 
