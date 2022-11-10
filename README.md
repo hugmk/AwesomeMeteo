@@ -13,10 +13,10 @@ https://openweathermap.org/
     Concernant les Logiciels utilisés pour l'environnement de développement nous somme partie sur Visual Studio, cet environnement est intégré avec des outils pour faire progresser les projets techniques depuis l'édition jusqu'au débogage en passant par la construction. Visual Studio Code présente un grand nombre de caractéristiques. A REVOIR 
     ANDROID STUDIO 
 
-###                                    Maquette 
+### Maquette 
 ![maquette](https://user-images.githubusercontent.com/96047669/201073721-ec133251-5b12-4cb2-a1fc-4a627ba50799.png)
 
-###                                     Logo 
+### Logo 
 ![Logo](https://user-images.githubusercontent.com/96047669/201074208-cb717884-03da-46b1-a1ce-b0e0affdc602.png)
 
 
