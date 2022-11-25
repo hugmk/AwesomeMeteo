@@ -3,11 +3,7 @@ import type {Node} from 'react';
 import Cities from './components/Cities.js';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
   View,
 } from 'react-native';
 
