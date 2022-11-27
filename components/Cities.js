@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useReducer } from 'react';
-import { View, StyleSheet, TextInput, StatusBar, Button, Text, FlatList, Image, Alert, Animated } from 'react-native';
+import { View, StyleSheet, TextInput, StatusBar, Button, Text, FlatList, Image, Alert } from 'react-native';
 import City from '../classes/City.js';
 import Meteo from '../classes/Meteo.js';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,7 +8,7 @@ import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
 
 const WEATHER_API_KEY = '63a5ba9022efff0b31f27831ff862eac';
-const deletingCity = new Subject();
+const updatingCities = new Subject();
 var cities: City[] = [];
 var isFirstLoad = true;
 
@@ -17,14 +17,19 @@ export default function Cities() {
   const [list, setList] = useState([]);
   const [, forceUpdate] = useReducer(x => x + 1, 0);
 
-  deletingCity.subscribe(async (nextCity: String) => {
-    await deleteCityByName(nextCity);
+  updatingCities.subscribe(async (cities) => {
+    setList(cities);
   })
 
-  const addCityToList = async (city) => {
-    await addCity(city);
-    setList(cities);
-    setCity('');
+  const addCityToList = async (city: String) => {
+    if(city && city.length > 2) {
+      let newCity = await addCity(city);
+      if(newCity) {
+        await getCityMeteo(newCity);
+        setList(cities);
+        setCity('');
+      }
+    }
   }
 
   const getCitiesMeteo = async () => {
@@ -33,14 +38,8 @@ export default function Cities() {
     forceUpdate();
   }
 
-  const deleteCityByName = async (cityName) => {
-    await storageRemoveCity(cityName);
-    const filteredData = list.filter(item => item.name !== cityName);
-    cities = filteredData;
-    setList(filteredData);
-  }
-
   const initCities = async () => {
+    console.log("INITIALIZING LIST");
     isFirstLoad = false;
     var storedCities = await storageGetAllStoredCities();
     console.log(storedCities.length);
@@ -48,7 +47,8 @@ export default function Cities() {
       let cityToAdd = JSON.parse(storedCities[city][1]);
       cities.push(cityToAdd);
     }
-    setList(cities);    
+    await getCitiesMeteo();
+    setList(cities);
   }
 
   if(isFirstLoad) {
@@ -60,30 +60,18 @@ export default function Cities() {
       <TextInput
         style={styles.input}
         placeholder="Ajouter une ville +"
-        placeholderTextColor="#000"
+        placeholderTextColor="#FFFFFF"
         onChangeText={newText => {setCity(newText);}}
         defaultValue={city}
+        onSubmitEditing={async () => {await addCityToList(city)}}
       />
-      <Button
-        onPress={async () => {await addCityToList(city)}}
-        title="Ajouter"
-        color="#004"
-      />
-      <Button
-        onPress={async () => {await getCitiesMeteo()}}
-        title="Récupérer la météo"
-        color="#004"
-      />
-      <Button
-        onPress={async () => {await storageGetAllStoredCities()}}
-        title="getstoragelist (see logs)"
-        color="#004"
-      />
-      <FlatList
-        data={list}
-        renderItem={({item}) => renderCity(item)}
-      />
-      
+      <View style={styles.meteoContainer}>
+        <Text style={styles.myCitiesTitle}>Mes villes</Text>
+        <FlatList
+          data={list}
+          renderItem={({item}) => renderCity(item)}
+        />
+      </View>      
     </View>
   );
 }
@@ -91,31 +79,30 @@ export default function Cities() {
 async function addCity(city: String) {
   console.log("city : " + city);
   let retrievedCity = await storageGetCity(city);
-    if(retrievedCity != null) { //city is in the list, don't add it, alert
-      console.log("get city returned not null, so alert");
-      let alertMsg = "La ville " + city + " a déjà ajoutée";
+  if(retrievedCity != null) { //city is in the list, don't add it, alert
+    console.log("get city returned not null, so alert");
+    let alertMsg = "La ville " + city + " a déjà été ajoutée";
+    alertCityAdd(alertMsg);
+  }
+  else { //city is not in the list, add it
+    var request = 'http://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=1&appid='+WEATHER_API_KEY;
+    var cityInfo = await getCityInfo(request);
+    if(!cityInfo || !cityInfo.local_names || !cityInfo.local_names.fr || !cityInfo.lat) { //city not found
+      let alertMsg = "La ville " + city + " n'a pas été trouvée";
       alertCityAdd(alertMsg);
     }
-    else { //city is not in the list, add it
-      var request = 'http://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=1&appid='+WEATHER_API_KEY;
-      var cityInfo = await getCityInfo(request);
-      if(!cityInfo || !cityInfo.local_names) { //city not found
-        let alertMsg = "La ville " + city + " n'a pas été trouvée";
-        alertCityAdd(alertMsg);
-      }
-      else {
-        let newCity = new City(
-          cityInfo.local_names.fr,
-          cityInfo.lat,
-          cityInfo.lon,
-          null
-        );
-        cities.push(newCity);
-        await storageSaveCity(newCity);
-        console.log("ADD FINISHED, CHECKING STORAGE");
-        await storageGetAllStoredCities();
-      }     
-    }    
+    else {
+      let newCity = new City(
+        cityInfo.local_names.fr,
+        cityInfo.lat,
+        cityInfo.lon,
+        null
+      );
+      cities.push(newCity);
+      await storageSaveCity(newCity);
+      return newCity;
+    }     
+  }    
 }
 
 function alertCityAdd(msg: String) {
@@ -133,6 +120,29 @@ async function getCityInfo(request) {
     const response = await fetch(request);
     const json = await response.json();
     return json[0];
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function getCityMeteo(city: City) {
+  try {
+    var request = 'https://api.openweathermap.org/data/2.5/weather?lat='+city.latitude+'&lon='+city.longitude+'&units=metric&lang=fr&appid='+WEATHER_API_KEY;
+    const response = await fetch(request);
+    const json = await response.json();
+    console.log("json response");
+    console.log(json);
+
+    let meteoDesc = toTitleCase(json.weather[0].description);
+    let meteoTemperature = Math.round(json.main.temp);
+    
+    let newMeteo = new Meteo(
+      meteoDesc,
+      json.weather[0].icon,
+      meteoTemperature,
+      json.wind.speed
+    );
+    city.meteo = newMeteo;
   } catch (error) {
     console.error(error);
   }
@@ -169,9 +179,14 @@ function renderCity(city: City) {
       <GestureRecognizer
         onSwipeLeft={() => callDeleteCity(city.name)}>
           <View style={styles.city}>
-            <Text style={styles.cityText}>{city.name} : {city.meteo.weatherDesc} | {city.meteo?.temperature}°C</Text>
-            <Image source={{uri: 'https://openweathermap.org/img/wn/'+city.meteo.weatherIcon+'@2x.png'}}
-                style={{width: 50, height: 50}} />
+            <Text style={styles.cityText}>{city.name}</Text>
+            <View style={styles.metoContent}>
+              <View style={styles.meteoIcon}>
+                <Image source={{uri: 'https://openweathermap.org/img/wn/'+city.meteo.weatherIcon+'@2x.png'}}
+                    style={{width: 50, height: 50}} />
+              </View>              
+              <Text style={styles.temperature}>{city.meteo?.temperature}°C</Text>
+            </View>            
           </View>
       </GestureRecognizer>
     );
@@ -195,9 +210,16 @@ function callDeleteCity(cityName) {
         text: "Annuler",
         style: "cancel"
       },
-      { text: "Supprimer", onPress: () => deletingCity.next(cityName) }
+      { text: "Supprimer", onPress: async () => await deleteCityByName(cityName) }
     ]
   );
+}
+
+async function deleteCityByName(cityName) {
+  await storageRemoveCity(cityName);
+  const filteredData = cities.filter(item => item.name !== cityName);
+  cities = filteredData;
+  updatingCities.next(cities);
 }
 
 function toTitleCase(str) {
@@ -245,23 +267,59 @@ const storageGetAllStoredCities = async () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 3,
     flexDirection: 'column',
-    marginTop: StatusBar.currentHeight || 0
+    marginTop: 20,
   },
   input: {
-    padding: 10,
-    fontSize: 26,
+    fontSize: 36,
+    fontFamily: "BarlowCondensed-SemiBold",
     height: 44,
-    color: 'black'
+    color: '#FFFFFF',
+    padding: 0
+  },
+  meteoContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    marginTop: 20
+  },
+  myCitiesTitle: {
+    fontFamily: "BarlowCondensed-BoldItalic",
+    fontSize: 30,  
+    alignItems: 'center',
+    justifyContent: 'center',
+    textTransform: 'uppercase',
+    color: "#FF3847",
+    textShadowColor: 'rgba(211, 47, 35, 0.6)',
+    textShadowOffset: {width: 2, height: 2},
+    textShadowRadius: 2,
   },
   city: {
     height: 50,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
-    backgroundColor: "green"
+    justifyContent: "space-between"
   },
   cityText: {
-    fontSize: 18
+    fontSize: 25,
+    fontFamily: "BarlowCondensed-SemiBold",
+    color: "#FFFFFF",
+    width: '70%'
+  },
+  metoContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '30%'
+  },
+  meteoIcon: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 0
+  },
+  temperature: {
+    fontSize: 25,
+    fontFamily: "BarlowCondensed-SemiBold",
+    color: "#FFFFFF"
   }
 });

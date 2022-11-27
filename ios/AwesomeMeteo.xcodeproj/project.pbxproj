@@ -14,6 +14,24 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-AwesomeMeteo-AwesomeMeteoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AwesomeMeteo-AwesomeMeteoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		062D9245F0364B009AD7FFD4 /* BarlowCondensed-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7CF1AA52E6B4428AC3EBC0E /* BarlowCondensed-Black.ttf */; };
+		A04727EB4D56410C8BA52DED /* BarlowCondensed-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA766F4063CA41CCA54DC472 /* BarlowCondensed-BlackItalic.ttf */; };
+		CE37486F87CE438EBE772961 /* BarlowCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC1719EDF7DF4DA2A1559B67 /* BarlowCondensed-Bold.ttf */; };
+		0ACF207F00C34E6AAD1ABB8F /* BarlowCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8522A3E240094D83A0F369EF /* BarlowCondensed-BoldItalic.ttf */; };
+		65521B07680B4B54A3E5CF9A /* BarlowCondensed-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB9D82605E8450DA6E79E68 /* BarlowCondensed-ExtraBold.ttf */; };
+		5EA39F6CC330427BB23AB171 /* BarlowCondensed-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC5F2EF854DB46219B5073FE /* BarlowCondensed-ExtraBoldItalic.ttf */; };
+		3BAB9DE99012476D9188EFFE /* BarlowCondensed-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 083B74518D024E92B25B7BA9 /* BarlowCondensed-ExtraLight.ttf */; };
+		01E9E3B80C8347E687A5DDD0 /* BarlowCondensed-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38A4DFEAEB5E4909A9251755 /* BarlowCondensed-ExtraLightItalic.ttf */; };
+		3287A2A0856E4B7AA453B1F6 /* BarlowCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8F0B314A12A428D96E4A5BE /* BarlowCondensed-Italic.ttf */; };
+		33008D13F62041FAAD636E35 /* BarlowCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8533DFDB8EB24C27A0CA384A /* BarlowCondensed-Light.ttf */; };
+		F8397BC4E663498BAEECCA86 /* BarlowCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 65297B6A48EA4A8293272E17 /* BarlowCondensed-LightItalic.ttf */; };
+		F62FDF37CE5946A58DF5D683 /* BarlowCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BC4815E837641359979D952 /* BarlowCondensed-Medium.ttf */; };
+		EF7195C6A39F4C4A8DA8F0C8 /* BarlowCondensed-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78D48F1AE4A84778AB1D81ED /* BarlowCondensed-MediumItalic.ttf */; };
+		B37DA7F9FEEF4C42A02FD9A8 /* BarlowCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A450A6406A940C686D21694 /* BarlowCondensed-Regular.ttf */; };
+		2D65D9920BA8494F922A0C6E /* BarlowCondensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94EEBDF69CA243DC8B56E464 /* BarlowCondensed-SemiBold.ttf */; };
+		DA423CFE446C40FE8E0D912A /* BarlowCondensed-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34117D77C13E4B109753EA04 /* BarlowCondensed-SemiBoldItalic.ttf */; };
+		D42F9FCAA00445F0AE015815 /* BarlowCondensed-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0EFAE41863FA449F9AC50016 /* BarlowCondensed-Thin.ttf */; };
+		7397EE800BF7468BA8012A96 /* BarlowCondensed-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61ABABE987324D91851EDD7A /* BarlowCondensed-ThinItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +62,24 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AwesomeMeteo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AwesomeMeteo-AwesomeMeteoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeMeteo-AwesomeMeteoTests.release.xcconfig"; path = "Target Support Files/Pods-AwesomeMeteo-AwesomeMeteoTests/Pods-AwesomeMeteo-AwesomeMeteoTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F7CF1AA52E6B4428AC3EBC0E /* BarlowCondensed-Black.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Black.ttf"; path = "../assets/fonts/BarlowCondensed-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FA766F4063CA41CCA54DC472 /* BarlowCondensed-BlackItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-BlackItalic.ttf"; path = "../assets/fonts/BarlowCondensed-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EC1719EDF7DF4DA2A1559B67 /* BarlowCondensed-Bold.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Bold.ttf"; path = "../assets/fonts/BarlowCondensed-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8522A3E240094D83A0F369EF /* BarlowCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-BoldItalic.ttf"; path = "../assets/fonts/BarlowCondensed-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6DB9D82605E8450DA6E79E68 /* BarlowCondensed-ExtraBold.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-ExtraBold.ttf"; path = "../assets/fonts/BarlowCondensed-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC5F2EF854DB46219B5073FE /* BarlowCondensed-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-ExtraBoldItalic.ttf"; path = "../assets/fonts/BarlowCondensed-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		083B74518D024E92B25B7BA9 /* BarlowCondensed-ExtraLight.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-ExtraLight.ttf"; path = "../assets/fonts/BarlowCondensed-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		38A4DFEAEB5E4909A9251755 /* BarlowCondensed-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-ExtraLightItalic.ttf"; path = "../assets/fonts/BarlowCondensed-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E8F0B314A12A428D96E4A5BE /* BarlowCondensed-Italic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Italic.ttf"; path = "../assets/fonts/BarlowCondensed-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8533DFDB8EB24C27A0CA384A /* BarlowCondensed-Light.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Light.ttf"; path = "../assets/fonts/BarlowCondensed-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		65297B6A48EA4A8293272E17 /* BarlowCondensed-LightItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-LightItalic.ttf"; path = "../assets/fonts/BarlowCondensed-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4BC4815E837641359979D952 /* BarlowCondensed-Medium.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Medium.ttf"; path = "../assets/fonts/BarlowCondensed-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		78D48F1AE4A84778AB1D81ED /* BarlowCondensed-MediumItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-MediumItalic.ttf"; path = "../assets/fonts/BarlowCondensed-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A450A6406A940C686D21694 /* BarlowCondensed-Regular.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Regular.ttf"; path = "../assets/fonts/BarlowCondensed-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94EEBDF69CA243DC8B56E464 /* BarlowCondensed-SemiBold.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-SemiBold.ttf"; path = "../assets/fonts/BarlowCondensed-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		34117D77C13E4B109753EA04 /* BarlowCondensed-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-SemiBoldItalic.ttf"; path = "../assets/fonts/BarlowCondensed-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0EFAE41863FA449F9AC50016 /* BarlowCondensed-Thin.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-Thin.ttf"; path = "../assets/fonts/BarlowCondensed-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		61ABABE987324D91851EDD7A /* BarlowCondensed-ThinItalic.ttf */ = {isa = PBXFileReference; name = "BarlowCondensed-ThinItalic.ttf"; path = "../assets/fonts/BarlowCondensed-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +158,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				07F90044D7824A2DA5D074EB /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +184,32 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		07F90044D7824A2DA5D074EB /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				F7CF1AA52E6B4428AC3EBC0E /* BarlowCondensed-Black.ttf */,
+				FA766F4063CA41CCA54DC472 /* BarlowCondensed-BlackItalic.ttf */,
+				EC1719EDF7DF4DA2A1559B67 /* BarlowCondensed-Bold.ttf */,
+				8522A3E240094D83A0F369EF /* BarlowCondensed-BoldItalic.ttf */,
+				6DB9D82605E8450DA6E79E68 /* BarlowCondensed-ExtraBold.ttf */,
+				BC5F2EF854DB46219B5073FE /* BarlowCondensed-ExtraBoldItalic.ttf */,
+				083B74518D024E92B25B7BA9 /* BarlowCondensed-ExtraLight.ttf */,
+				38A4DFEAEB5E4909A9251755 /* BarlowCondensed-ExtraLightItalic.ttf */,
+				E8F0B314A12A428D96E4A5BE /* BarlowCondensed-Italic.ttf */,
+				8533DFDB8EB24C27A0CA384A /* BarlowCondensed-Light.ttf */,
+				65297B6A48EA4A8293272E17 /* BarlowCondensed-LightItalic.ttf */,
+				4BC4815E837641359979D952 /* BarlowCondensed-Medium.ttf */,
+				78D48F1AE4A84778AB1D81ED /* BarlowCondensed-MediumItalic.ttf */,
+				7A450A6406A940C686D21694 /* BarlowCondensed-Regular.ttf */,
+				94EEBDF69CA243DC8B56E464 /* BarlowCondensed-SemiBold.ttf */,
+				34117D77C13E4B109753EA04 /* BarlowCondensed-SemiBoldItalic.ttf */,
+				0EFAE41863FA449F9AC50016 /* BarlowCondensed-Thin.ttf */,
+				61ABABE987324D91851EDD7A /* BarlowCondensed-ThinItalic.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +307,24 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				062D9245F0364B009AD7FFD4 /* BarlowCondensed-Black.ttf in Resources */,
+				A04727EB4D56410C8BA52DED /* BarlowCondensed-BlackItalic.ttf in Resources */,
+				CE37486F87CE438EBE772961 /* BarlowCondensed-Bold.ttf in Resources */,
+				0ACF207F00C34E6AAD1ABB8F /* BarlowCondensed-BoldItalic.ttf in Resources */,
+				65521B07680B4B54A3E5CF9A /* BarlowCondensed-ExtraBold.ttf in Resources */,
+				5EA39F6CC330427BB23AB171 /* BarlowCondensed-ExtraBoldItalic.ttf in Resources */,
+				3BAB9DE99012476D9188EFFE /* BarlowCondensed-ExtraLight.ttf in Resources */,
+				01E9E3B80C8347E687A5DDD0 /* BarlowCondensed-ExtraLightItalic.ttf in Resources */,
+				3287A2A0856E4B7AA453B1F6 /* BarlowCondensed-Italic.ttf in Resources */,
+				33008D13F62041FAAD636E35 /* BarlowCondensed-Light.ttf in Resources */,
+				F8397BC4E663498BAEECCA86 /* BarlowCondensed-LightItalic.ttf in Resources */,
+				F62FDF37CE5946A58DF5D683 /* BarlowCondensed-Medium.ttf in Resources */,
+				EF7195C6A39F4C4A8DA8F0C8 /* BarlowCondensed-MediumItalic.ttf in Resources */,
+				B37DA7F9FEEF4C42A02FD9A8 /* BarlowCondensed-Regular.ttf in Resources */,
+				2D65D9920BA8494F922A0C6E /* BarlowCondensed-SemiBold.ttf in Resources */,
+				DA423CFE446C40FE8E0D912A /* BarlowCondensed-SemiBoldItalic.ttf in Resources */,
+				D42F9FCAA00445F0AE015815 /* BarlowCondensed-Thin.ttf in Resources */,
+				7397EE800BF7468BA8012A96 /* BarlowCondensed-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

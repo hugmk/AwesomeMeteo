@@ -1,0 +1,77 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/BarlowCondensed-Black.ttf",
+      "sha1": "ca766f76ce5a40120b6e7d0e2f0d534699f57bb8"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-BlackItalic.ttf",
+      "sha1": "b1b6e36db7addfed7a60eb9f5ae3b5eeddf87760"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Bold.ttf",
+      "sha1": "6262bcb13860d998f4f0ef6f24955015ba5c9fc8"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-BoldItalic.ttf",
+      "sha1": "6c5b40ab11b08277cf3577e5509b831cb58c4a67"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-ExtraBold.ttf",
+      "sha1": "ad26fc581156fee4f83113df5189016ac72a484b"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-ExtraBoldItalic.ttf",
+      "sha1": "098e0314cf4de700d51762e9b149f6f1ef4e0681"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-ExtraLight.ttf",
+      "sha1": "9cddb5743953080e41b14f1a787af884305c6c04"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-ExtraLightItalic.ttf",
+      "sha1": "f4a72be478d4572cb57da378c77dc89fa980912a"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Italic.ttf",
+      "sha1": "11cad11f08ff3b4f5c759f020ca0e1ebd1143ca4"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Light.ttf",
+      "sha1": "0cf1be176df23c03d28c8b2e8123afa34e30a09f"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-LightItalic.ttf",
+      "sha1": "7b77bc59653c6d7e9a699284af9abcf1029aefc9"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Medium.ttf",
+      "sha1": "97ca26fcb390d83da8a008d5bf085fd1277d4999"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-MediumItalic.ttf",
+      "sha1": "8cd376129ec157e708b68b5ac447a5d6ec0cf1e9"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Regular.ttf",
+      "sha1": "341759b9be0c543c624a7dfbd0b0063aa4b8480a"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-SemiBold.ttf",
+      "sha1": "465591c65008579e7b03792dc5598f384ca3cfd4"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-SemiBoldItalic.ttf",
+      "sha1": "32e139a734f62bd77e462439de732cb1b46acc25"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-Thin.ttf",
+      "sha1": "d60de0b4fec56686d233e68ccda9035195b73bbf"
+    },
+    {
+      "path": "assets/fonts/BarlowCondensed-ThinItalic.ttf",
+      "sha1": "b061007aa0fb966349d69a2d3cf8b95beb60dd51"
+    }
+  ]
+}
