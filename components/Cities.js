@@ -8,6 +8,7 @@ import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
 
 const WEATHER_API_KEY = '63a5ba9022efff0b31f27831ff862eac';
+const METEO_CALL_INTERVAL = 300000; // 5 minutes
 const updatingCities = new Subject();
 var cities: City[] = [];
 var isFirstLoad = true;
@@ -48,11 +49,19 @@ export default function Cities() {
       cities.push(cityToAdd);
     }
     await getCitiesMeteo();
-    setList(cities);
   }
 
   if(isFirstLoad) {
     initCities();
+  }
+  else {
+    setInterval(
+      async function() {
+          console.log("calling meteo new minute");
+          await getCitiesMeteo();
+      },
+      METEO_CALL_INTERVAL
+    )
   }
 
   return (
