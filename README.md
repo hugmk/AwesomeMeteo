@@ -3,6 +3,7 @@
 ### Lancer l'application
 
 - Suivre le tuto de React Native pour mettre en place l'environnement de développement (https://reactnative.dev/docs/environment-setup), sauter l'étape de création d'un projet.
+- Dans un terminal, aller dans le dossier racine du projet, et lancer la commande `npm install`.
 - Ouvrir le dossier `AwesomeMeteo\android` dans Android Studio, et lancer l'appli sur un appareil virtuel.
 - Dans un terminal, aller dans le dossier racine du projet, et lancer la commande `npx react-native start`.
 - Dans un autre terminal, aller dans le dossier racine du projet, et lancer la commande `npx react-native run-android`.
