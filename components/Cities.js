@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { useState, useReducer } from 'react';
-import { View, StyleSheet, TextInput, StatusBar, Button, Text, FlatList, Image, Alert } from 'react-native';
+import { useState, useReducer, useEffect } from 'react';
+import { View, StyleSheet, TextInput, Text, FlatList, Image, Alert } from 'react-native';
 import City from '../classes/City.js';
 import Meteo from '../classes/Meteo.js';
+import { ManageNotification } from './ManageNotification'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
@@ -11,7 +12,6 @@ const WEATHER_API_KEY = '63a5ba9022efff0b31f27831ff862eac';
 const METEO_CALL_INTERVAL = 300000; // 5 minutes
 const updatingCities = new Subject();
 var cities: City[] = [];
-var isFirstLoad = true;
 
 export default function Cities() {
   const [city, setCity] = useState('');
@@ -41,7 +41,6 @@ export default function Cities() {
 
   const initCities = async () => {
     console.log("INITIALIZING LIST");
-    isFirstLoad = false;
     var storedCities = await storageGetAllStoredCities();
     console.log(storedCities.length);
     for(var city in storedCities) {
@@ -51,18 +50,20 @@ export default function Cities() {
     await getCitiesMeteo();
   }
 
-  if(isFirstLoad) {
+  const getIntervalMeteo = async () => {
+    var oldCities = JSON.parse(JSON.stringify(cities));
+    await getCitiesMeteo();
+    ManageNotification(oldCities, cities);
+  }
+
+  useEffect(() => {
     initCities();
-  }
-  else {
-    setInterval(
-      async function() {
-          console.log("calling meteo new minute");
-          await getCitiesMeteo();
-      },
-      METEO_CALL_INTERVAL
-    )
-  }
+    const interval = setInterval(() => {
+      getIntervalMeteo();
+    }, METEO_CALL_INTERVAL);
+    return () => clearInterval(interval);
+    }, []
+  );
 
   return (
     <View style={styles.container}>
