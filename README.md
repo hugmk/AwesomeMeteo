@@ -29,11 +29,7 @@ Maquette fonctionnelle (*lo-fi*) :
 
 Maquettes visuelles (*hi-fi*) :
 ![design propositions](https://user-images.githubusercontent.com/103774810/212537862-f9cc762f-8c1a-4838-a494-231589672d84.png)
-La proposition de design numéro 1 a été finalement choisie.
-
-
-### Logo
-![logo](https://user-images.githubusercontent.com/96047669/201074208-cb717884-03da-46b1-a1ce-b0e0affdc602.png)
+La proposition de design **numéro 1** a été finalement choisie.
 
 
 ### Difficultés rencontrées
