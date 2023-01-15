@@ -2,35 +2,47 @@
 
 ### Lancer l'application
 
-- Suivre le tuto de React Native pour mettre en place l'environnement de développement (https://reactnative.dev/docs/environment-setup), sauter l'étape de création d'un projet.
+- Suivre le tuto de React Native pour mettre en place l'environnement de développement (https://reactnative.dev/docs/environment-setup), jusqu'à l'étape de création d'un projet, puisque nous allons lancer celui-ci.
 - Dans un terminal, aller dans le dossier racine du projet, et lancer la commande `npm install`.
-- Ouvrir le dossier `AwesomeMeteo\android` dans Android Studio, et lancer l'appli sur un appareil virtuel.
+- Ouvrir le dossier `AwesomeMeteo\android` dans Android Studio, et lancer l'appli sur un appareil virtuel (appareil recommandé : Google Pixel 5).
 - Dans un terminal, aller dans le dossier racine du projet, et lancer la commande `npx react-native start`.
 - Dans un autre terminal, aller dans le dossier racine du projet, et lancer la commande `npx react-native run-android`.
 L'application devrait alors se charger sur l'émulateur d'Android Studio précédemment lancé.
 
-### Présentation de l'application  A REVOIR 
 
-    Dans le cadre de notre cours en programmation avanvée nous avons pour objevtif de réalise une application de "météo" orientée événement "extrêmes". Pour ce faire nous avons tout d'accord récupérer les data sur Open Weather, qui fournit des données météorologiques mondiales via une API.
-https://openweathermap.org/
+### Présentation de l'application
+
+Dans le cadre de notre cours en programmation avanvée nous avons pour objectif la réalisation d'une application météo, notifiant l'utilisateur lors d'un changement climatique.
+C'est pourquoi nous proposons l'application **Awesome Meteo**, une application Android, vous permettant de renseigner les villes de votre choix, de voir la météo actuelle pour ces villes, et de recevoir des notifications en cas de changement de condition climatique, de température, ou de vitesse du vent.
 
 
-### Technologie &  Logiciels Utilisés A REVOIR 
+### Technologies & logiciels utilisés
 
-    Après plusieur recheche nous avons regarder les principales raisons d'utiliser React js pour le développement web et le langage de codage optimisés de la bibliothèque. Les composantes et les concepts de React sont très faciles à comprendre, de plus il assure un code bien plus propre, plus lisible et plus complet. Par conséquent, nous avons décider d'opter pour du ReactNative avec du language Java Script ainsi que du TypeScript. 
+Concernant la technologie utilisé, nous avons opté pour React Native, un framework d'applications mobiles créé par Facebook, permettant le développement d'applications iOS et Android. L'utilisation du langage JavaScript, que nous connaissions déjà moyennement, ainsi que la découverte d'un nouveau framework nous ont poussé à faire ce choix. La possibilité de créer des applications à la fois sur les systèmes d'exploitation Android et iOS nous ont également motivé à choisir React Native, bien que nous avons finalement axé notre application pour les appareils Android.
 
-    Concernant les Logiciels utilisés pour l'environnement de développement nous somme partie sur Visual Studio, cet environnement est intégré avec des outils pour faire progresser les projets techniques depuis l'édition jusqu'au débogage en passant par la construction. Visual Studio Code présente un grand nombre de caractéristiques. A REVOIR 
-    ANDROID STUDIO 
+Le développement à été réalisé à l'aide de l'éditeur de code Visual Studio Code, et nous avons utilisé Android Studio pour émuler un smartphone et tester l'application.
+Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les fichiers du repository.
 
-### Maquette 
+Pour récupérer les données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api).
+
+
+### Maquettes
+
+Maquette fonctionnelle (*lo-fi*) :
 ![maquette](https://user-images.githubusercontent.com/96047669/201073721-ec133251-5b12-4cb2-a1fc-4a627ba50799.png)
 
-### Logo 
-![Logo](https://user-images.githubusercontent.com/96047669/201074208-cb717884-03da-46b1-a1ce-b0e0affdc602.png)
+Maquettes visuelles (*hi-fi*) :
+![maquette](https://user-images.githubusercontent.com/96047669/201073721-ec133251-5b12-4cb2-a1fc-4a627ba50799.png)
+La proposition de design numéro 1 a été finalement choisie.
+
+
+### Logo
+
+![logo](https://user-images.githubusercontent.com/96047669/201074208-cb717884-03da-46b1-a1ce-b0e0affdc602.png)
 
 
 ### Difficultés rencontrées 
 
-    • En utilisant Expo Snack, pour encoder un projet Recat Natif, la plateforme a malheureusement montré ses limitations lors de l'utilisation de l'API OpenWeather : les requêtes vers l’api étaient bloquées. Nous avons alors basculé vers un mode de développement plus classique, en utilisant Android Studio, où nous n'avions plus de problème.
-    
-    • Comme React Native a l'habitude de développer des sites Web, il nous a fallu un certain temps pour nous adapter pour nous sentir à l'aise avec le développement mobile.
+- Au début du développement du projet, nous utilisions Expo Snack, un éditeur en ligne permettant de développer un projet en React Native sur un navigateur. La plateforme a malheureusement montré ses limites lors de l'utilisation de l'API OpenWeather : les requêtes vers l’api étaient bloquées. Nous avons alors basculé vers un mode de développement plus classique, en utilisant Android Studio, où le problème de connexion à l'API était résolus. Ce changement d'environnement nous a aussi probablement éviter d'autres problèmes dans le futur, nottament lors de l'utilisation de librairies externes, par exemple pour la gestion des notifications.
+
+- Comme nous étions tous les trois plus à l'aise en développement de sites web, il nous a donc fallu un certain temps pour nous adapter au développement mobile, et au framework React Native.
