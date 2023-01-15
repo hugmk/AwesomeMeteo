@@ -7,7 +7,7 @@ export default class City {
     longitude: String;
     meteo: Meteo;
 
-    constructor(name, latitude, longitude, meteo) {
+    constructor(name, latitude, longitude, meteo?) {
       this.name = name;
       this.latitude = latitude;
       this.longitude = longitude;
