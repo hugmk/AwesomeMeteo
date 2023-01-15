@@ -3,7 +3,7 @@ import { useState, useReducer, useEffect } from 'react';
 import { View, StyleSheet, TextInput, Text, FlatList, Image, Alert } from 'react-native';
 import City from '../classes/City.js';
 import Meteo from '../classes/Meteo.js';
-import { ManageNotification } from './ManageNotification'
+import { ManageNotification } from '../services/ManageNotification'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
@@ -105,11 +105,11 @@ async function addCity(city: String) {
       let newCity = new City(
         cityInfo.local_names.fr,
         cityInfo.lat,
-        cityInfo.lon,
-        null
+        cityInfo.lon
       );
       cities.push(newCity);
       await storageSaveCity(newCity);
+      console.log(newCity);
       return newCity;
     }     
   }    
