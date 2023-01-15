@@ -3,8 +3,8 @@ import { useState, useReducer, useEffect } from 'react';
 import { View, StyleSheet, TextInput, Text, FlatList, Image, Alert } from 'react-native';
 import City from '../classes/City.js';
 import Meteo from '../classes/Meteo.js';
-import { ManageNotification } from '../services/ManageNotification'
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ManageNotification } from '../services/ManageNotification';
+import Storage from '../services/Storage.js';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
 
@@ -41,7 +41,7 @@ export default function Cities() {
 
   const initCities = async () => {
     console.log("INITIALIZING LIST");
-    var storedCities = await storageGetAllStoredCities();
+    var storedCities = await Storage.storageGetAllStoredCities();
     console.log(storedCities.length);
     for(var city in storedCities) {
       let cityToAdd = JSON.parse(storedCities[city][1]);
@@ -88,7 +88,7 @@ export default function Cities() {
 
 async function addCity(city: String) {
   console.log("city : " + city);
-  let retrievedCity = await storageGetCity(city);
+  let retrievedCity = await Storage.storageGetCity(city);
   if(retrievedCity != null) { //city is in the list, don't add it, alert
     console.log("get city returned not null, so alert");
     let alertMsg = "La ville " + city + " a déjà été ajoutée";
@@ -108,7 +108,7 @@ async function addCity(city: String) {
         cityInfo.lon
       );
       cities.push(newCity);
-      await storageSaveCity(newCity);
+      await Storage.storageSaveCity(newCity);
       console.log(newCity);
       return newCity;
     }     
@@ -226,7 +226,7 @@ function callDeleteCity(cityName) {
 }
 
 async function deleteCityByName(cityName) {
-  await storageRemoveCity(cityName);
+  await Storage.storageRemoveCity(cityName);
   const filteredData = cities.filter(item => item.name !== cityName);
   cities = filteredData;
   updatingCities.next(cities);
@@ -234,45 +234,6 @@ async function deleteCityByName(cityName) {
 
 function toTitleCase(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-const storageSaveCity = async (city: City) => {
-  try {
-    await AsyncStorage.setItem(city.name.toLowerCase(), JSON.stringify(city));
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-const storageGetCity = async (cityName) => {
-  try {
-    const jsonValue = await AsyncStorage.getItem(cityName.toLowerCase());
-    console.log(jsonValue);
-    return jsonValue != null ? JSON.parse(jsonValue) : null;
-  } catch(e) {
-    console.log(e);
-  }
-}
-
-const storageRemoveCity = async (cityName) => {
-  try {
-    await AsyncStorage.removeItem(cityName.toLowerCase());
-  } catch(e) {}
-}
-
-const storageGetAllStoredCities = async () => {
-  try {
-    let keys = [];
-    keys = await AsyncStorage.getAllKeys();
-    let values;
-    values = await AsyncStorage.multiGet(keys);
-    console.log("ALL VALUES FROM STORAGE :");
-    console.log(values);
-
-    return values;
-  } catch(e) {
-    console.log(e);
-  }
 }
 
 const styles = StyleSheet.create({
