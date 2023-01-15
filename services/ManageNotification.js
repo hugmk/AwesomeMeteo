@@ -1,6 +1,49 @@
 import PushNotification from 'react-native-push-notification';
 
 export function ManageNotification(oldCities, newCities) {
+    // var demoOldCities = [
+    //   { name: 'Nice',
+    //     latitude: 43.7009358,
+    //     longitude: 7.2683912,
+    //     meteo: 
+    //     { weatherDesc: 'Nuageux',
+    //       weatherIcon: '04d',
+    //       temperature: 14,
+    //       windSpeed: 2.06 }
+    //   },
+    //   { name: 'Paris',
+    //     latitude: 48.8588897,
+    //     longitude: 2.3200410217200766,
+    //     meteo: 
+    //     { weatherDesc: 'Nuageux',
+    //       weatherIcon: '04d',
+    //       temperature: 9,
+    //       windSpeed: 10.8 } 
+    //   } 
+    // ];
+
+    // var demoNewCities = [
+    //   { name: 'Nice',
+    //     latitude: 43.7009358,
+    //     longitude: 7.2683912,
+    //     meteo: 
+    //     { weatherDesc: 'Pluie légère',
+    //       weatherIcon: '04d',
+    //       temperature: 14,
+    //       windSpeed: 2.06 }
+    //   },
+    //   { name: 'Paris',
+    //     latitude: 48.8588897,
+    //     longitude: 2.3200410217200766,
+    //     meteo: 
+    //     { weatherDesc: 'Nuageux',
+    //       weatherIcon: '04d',
+    //       temperature: 10,
+    //       windSpeed: 10.8 } 
+    //   } 
+    // ];  
+    //var res = compareMeteo(demoOldCities, demoNewCities);
+
     var res = compareMeteo(oldCities, newCities);
 
     if(res && res.length > 0) {
