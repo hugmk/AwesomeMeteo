@@ -1,12 +1,12 @@
 
 export default class Meteo {
 
-    weatherDesc: String;
-    weatherIcon: String;
+    weatherDesc: string;
+    weatherIcon: string;
     temperature: Number;
     windSpeed: Number;
 
-    constructor(weatherDesc, weatherIcon, temperature, windSpeed) {
+    constructor(weatherDesc: string, weatherIcon: string, temperature: Number, windSpeed: Number) {
         this.weatherDesc = weatherDesc;
         this.weatherIcon = weatherIcon;
         this.temperature = temperature;

@@ -9,7 +9,7 @@ const Storage = {
           console.log(e);
         }
     },
-    storageGetCity: async (cityName) => {
+    storageGetCity: async (cityName: string) => {
         try {
             const jsonValue = await AsyncStorage.getItem(cityName.toLowerCase());
             console.log(jsonValue);
@@ -18,15 +18,14 @@ const Storage = {
             console.log(e);
         }
     },
-    storageRemoveCity: async (cityName) => {
+    storageRemoveCity: async (cityName: string) => {
         try {
             await AsyncStorage.removeItem(cityName.toLowerCase());
         } catch(e) {}
     },
     storageGetAllStoredCities: async () => {
         try {
-            let keys = [];
-            keys = await AsyncStorage.getAllKeys();
+            let keys = await AsyncStorage.getAllKeys();
             let values;
             values = await AsyncStorage.multiGet(keys);
             console.log("ALL VALUES FROM STORAGE :");

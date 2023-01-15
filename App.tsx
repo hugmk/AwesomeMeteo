@@ -1,6 +1,5 @@
 import React from 'react';
-import type {Node} from 'react';
-import Cities from './components/Cities.js';
+import Cities from './components/Cities';
 import {
   SafeAreaView,
   StyleSheet,
@@ -8,7 +7,7 @@ import {
   Text
 } from 'react-native';
 
-const App: () => Node = () => {
+const App = () => {
   return (
     <SafeAreaView style={styles.appContent}>
       <View style={{flex: 1, width: '100%'}}>

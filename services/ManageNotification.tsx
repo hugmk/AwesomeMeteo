@@ -1,6 +1,7 @@
 import PushNotification from 'react-native-push-notification';
+import City from '../classes/City';
 
-export function ManageNotification(oldCities, newCities) {
+export function ManageNotification(oldCities: City[], newCities: City[]) {
     // var demoOldCities = [
     //   { name: 'Nice',
     //     latitude: 43.7009358,
@@ -62,7 +63,7 @@ export function ManageNotification(oldCities, newCities) {
     } 
 }
 
-function compareMeteo(oldCities, newCities) {
+function compareMeteo(oldCities: City[], newCities: City[]) {
   var result = [];
 
   for(let i = 0; i < newCities.length; i++) {    
@@ -71,19 +72,19 @@ function compareMeteo(oldCities, newCities) {
       var title = "";
       var message = "";
 
-      if(oldCity.meteo.weatherDesc !== newCities[i].meteo.weatherDesc) {
+      if(oldCity.meteo.weatherDesc !== newCities[i].meteo?.weatherDesc) {
         title = "🌜 Changement de météo à " + newCities[i].name;
-        message = "La météo à " + newCities[i].name + " est désormais : " + newCities[i].meteo.weatherDesc;
+        message = "La météo à " + newCities[i].name + " est désormais : " + newCities[i].meteo!.weatherDesc;
       }
 
-      else if(oldCity.meteo.temperature !== newCities[i].meteo.temperature) {
+      else if(oldCity.meteo.temperature !== newCities[i].meteo?.temperature) {
         title = "🌡️ Changement de température à " + newCities[i].name;
-        message = "Il fait à présent " + newCities[i].meteo.temperature + "°C à " + newCities[i].name;
+        message = "Il fait à présent " + newCities[i].meteo!.temperature + "°C à " + newCities[i].name;
       }
 
-      else if(oldCity.meteo.windSpeed !== newCities[i].meteo.windSpeed) {
+      else if(oldCity.meteo.windSpeed !== newCities[i].meteo?.windSpeed) {
         title = "🌬️ La vitesse du vent change à " + newCities[i].name;
-        if(oldCity.meteo.windSpeed < newCities[i].meteo.windSpeed) {
+        if(oldCity.meteo.windSpeed < newCities[i].meteo!.windSpeed) {
           message = "Le vent se lève à " + newCities[i].name;
         }
         else {

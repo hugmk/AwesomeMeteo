@@ -1,20 +1,20 @@
 import * as React from 'react';
 import { useState, useReducer, useEffect } from 'react';
 import { AppState, View, StyleSheet, TextInput, Text, FlatList, Image, Alert } from 'react-native';
-import City from '../classes/City.js';
-import Meteo from '../classes/Meteo.js';
-import { ManageNotification } from '../services/ManageNotification';
-import Storage from '../services/Storage.js';
-import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
+import GestureRecognizer from 'react-native-swipe-gestures';
 import BackgroundService from 'react-native-background-actions';
+import { ManageNotification } from '../services/ManageNotification';
+import City from '../classes/City';
+import Meteo from '../classes/Meteo';
+import Storage from '../services/Storage';
 
 const WEATHER_API_KEY = '63a5ba9022efff0b31f27831ff862eac';
 const METEO_CALL_INTERVAL = 300000; // 5 minutes
 const updatingCities = new Subject();
 var cities: City[] = [];
 var isFirstLoad = true;
-var interval;
+var interval: NodeJS.Timer;
 
 export default function Cities() {
   const [city, setCity] = useState('');
@@ -35,16 +35,16 @@ export default function Cities() {
     },
   };
 
-  updatingCities.subscribe(async (cities) => {
+  updatingCities.subscribe(async (cities: any) => {
     setList(cities);
   })
 
-  const addCityToList = async (city: String) => {
+  const addCityToList = async (city: string) => {
     if(city && city.length > 2) {
       let newCity = await addCity(city);
       if(newCity) {
         await getCityMeteo(newCity);
-        setList(cities);
+        setList(cities as any);
         setCity('');
       }
     }
@@ -52,16 +52,16 @@ export default function Cities() {
 
   const getCitiesMeteo = async () => {
     await getMeteo();
-    setList(cities);
+    setList(cities as any);
     forceUpdate();
   }
 
   const initCities = async () => {
     console.log("INITIALIZING LIST");
     var storedCities = await Storage.storageGetAllStoredCities();
-    console.log(storedCities.length);
+    console.log(storedCities?.length);
     for(var city in storedCities) {
-      let cityToAdd = JSON.parse(storedCities[city][1]);
+      let cityToAdd = JSON.parse(storedCities[city as any][1] as string);
       cities.push(cityToAdd);
     }
     await getCitiesMeteo();
@@ -74,7 +74,7 @@ export default function Cities() {
     ManageNotification(oldCities, cities);
   }
 
-  const backgroundTask = async (taskDataArguments) => {
+  const backgroundTask = async (taskDataArguments: any) => {
     await new Promise( async (resolve) => {
         interval = setInterval(() => {
           getIntervalMeteo();
@@ -134,7 +134,7 @@ export default function Cities() {
   );
 }
 
-async function addCity(city: String) {
+async function addCity(city: string) {
   console.log("city : " + city);
   let retrievedCity = await Storage.storageGetCity(city);
   if(retrievedCity != null) { //city is in the list, don't add it, alert
@@ -163,7 +163,7 @@ async function addCity(city: String) {
   }    
 }
 
-function alertCityAdd(msg: String) {
+function alertCityAdd(msg: string) {
   Alert.alert(
     "Impossible d'ajouter la ville",
     msg,
@@ -173,7 +173,7 @@ function alertCityAdd(msg: String) {
   );
 }
 
-async function getCityInfo(request) {
+async function getCityInfo(request: string) {
   try {
     const response = await fetch(request);
     const json = await response.json();
@@ -238,13 +238,13 @@ function renderCity(city: City) {
         onSwipeLeft={() => callDeleteCity(city.name)}>
           <View style={styles.city}>
             <Text style={styles.cityText}>{city.name}</Text>
-            <View style={styles.metoContent}>
+            <View style={styles.meteoContent}>
               <View style={styles.meteoIcon}>
                 <Image source={{uri: 'https://openweathermap.org/img/wn/'+city.meteo.weatherIcon+'@2x.png'}}
                     style={{width: 50, height: 50}} />
-              </View>              
-              <Text style={styles.temperature}>{city.meteo?.temperature}°C</Text>
-            </View>            
+              </View>
+              <Text style={styles.temperature}>{city.meteo!.temperature}°C</Text>
+            </View>
           </View>
       </GestureRecognizer>
     );
@@ -255,11 +255,11 @@ function renderCity(city: City) {
         <View style={styles.city}>
           <Text style={styles.cityText}>{city.name}</Text>
         </View>
-    </GestureRecognizer>        
-  );  
+    </GestureRecognizer>
+  );
 }
 
-function callDeleteCity(cityName) {
+function callDeleteCity(cityName: string) {
   Alert.alert(
     "Confirmer la suppression",
     "Etes-vous sûr de vouloir retirer " + cityName + " de votre liste ?",
@@ -273,14 +273,14 @@ function callDeleteCity(cityName) {
   );
 }
 
-async function deleteCityByName(cityName) {
+async function deleteCityByName(cityName: string) {
   await Storage.storageRemoveCity(cityName);
   const filteredData = cities.filter(item => item.name !== cityName);
   cities = filteredData;
   updatingCities.next(cities);
 }
 
-function toTitleCase(str) {
+function toTitleCase(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
@@ -325,7 +325,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     width: '70%'
   },
-  metoContent: {
+  meteoContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
