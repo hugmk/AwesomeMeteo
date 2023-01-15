@@ -24,10 +24,10 @@ Pour récupérer les données météorologiques, nous avons utilisé l'API [Open
 
 
 ### Maquettes
-Maquette fonctionnelle (*lo-fi*) :
+- Maquette fonctionnelle (*lo-fi*) :
 ![maquette_v1](https://user-images.githubusercontent.com/103774810/212537857-6386f45f-feb5-4585-b3bb-0d157fd49306.png)
 
-Maquettes visuelles (*hi-fi*) :
+- Maquettes visuelles (*hi-fi*) :
 ![design propositions](https://user-images.githubusercontent.com/103774810/212537862-f9cc762f-8c1a-4838-a494-231589672d84.png)
 La proposition de design **numéro 1** a été finalement choisie.
 
