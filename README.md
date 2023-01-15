@@ -1,4 +1,4 @@
-# PROJET : MÉTÉO 🌦️
+# Projet de Programmation Avancée : **AwesomeMeteo** 🌦️
 
 ### Lancer l'application
 - Suivre le tuto de React Native pour mettre en place l'environnement de développement (https://reactnative.dev/docs/environment-setup), jusqu'à l'étape de création d'un projet, puisque nous allons lancer celui-ci.
