@@ -1,22 +1,39 @@
 import * as React from 'react';
 import { useState, useReducer, useEffect } from 'react';
-import { View, StyleSheet, TextInput, Text, FlatList, Image, Alert } from 'react-native';
+import { AppState, View, StyleSheet, TextInput, Text, FlatList, Image, Alert } from 'react-native';
 import City from '../classes/City.js';
 import Meteo from '../classes/Meteo.js';
 import { ManageNotification } from '../services/ManageNotification';
 import Storage from '../services/Storage.js';
 import GestureRecognizer from 'react-native-swipe-gestures';
 import { Subject } from 'rxjs';
+import BackgroundService from 'react-native-background-actions';
 
 const WEATHER_API_KEY = '63a5ba9022efff0b31f27831ff862eac';
 const METEO_CALL_INTERVAL = 300000; // 5 minutes
 const updatingCities = new Subject();
 var cities: City[] = [];
+var isFirstLoad = true;
+var interval;
 
 export default function Cities() {
   const [city, setCity] = useState('');
   const [list, setList] = useState([]);
   const [, forceUpdate] = useReducer(x => x + 1, 0);
+  const options = {
+    taskName: 'Background',
+    taskTitle: 'Background working...',
+    taskDesc: 'Background',
+    taskIcon: { 
+        name: 'ic_launcher',
+        type: 'mipmap',
+    },
+    color: '#ff00ff',
+    linkingURI: 'yourSchemeHere://chat/jane', // See Deep Linking for more info
+    parameters: {
+        delay: 1000,
+    },
+  };
 
   updatingCities.subscribe(async (cities) => {
     setList(cities);
@@ -48,6 +65,7 @@ export default function Cities() {
       cities.push(cityToAdd);
     }
     await getCitiesMeteo();
+    isFirstLoad = false;
   }
 
   const getIntervalMeteo = async () => {
@@ -56,14 +74,44 @@ export default function Cities() {
     ManageNotification(oldCities, cities);
   }
 
+  const backgroundTask = async (taskDataArguments) => {
+    await new Promise( async (resolve) => {
+        interval = setInterval(() => {
+          getIntervalMeteo();
+        }, METEO_CALL_INTERVAL);
+        return () => clearInterval(interval);
+    });
+  };
+
+  const startBackgroundTask = async () => {
+    console.log("Starting background task...");
+    await BackgroundService.start(backgroundTask, options);
+  }
+
+  const stopBackgroundTask = async () => {
+    console.log("Stoping background task...");
+    await BackgroundService.stop();
+    clearInterval(interval);
+  }
+
   useEffect(() => {
-    initCities();
-    const interval = setInterval(() => {
-      getIntervalMeteo();
-    }, METEO_CALL_INTERVAL);
-    return () => clearInterval(interval);
-    }, []
-  );
+    const subscription = AppState.addEventListener('change', nextAppState => {
+      if (nextAppState === 'active') {
+        console.log("App is in foreground");
+          if(isFirstLoad) {
+            initCities();
+          }
+          stopBackgroundTask();
+      }
+      else {
+        console.log("App is in background");
+        startBackgroundTask();
+      }
+    });
+    return () => {
+      subscription.remove();
+    };
+  }, []);
 
   return (
     <View style={styles.container}>
