@@ -15,7 +15,9 @@ C'est pourquoi nous proposons l'application **Awesome Meteo**, une application A
 
 
 ### Technologies & logiciels utilisés
-Concernant la technologie utilisé, nous avons opté pour React Native, un framework d'applications mobiles créé par Facebook, permettant le développement d'applications iOS et Android. L'utilisation du langage JavaScript, que nous connaissions déjà moyennement, ainsi que la découverte d'un nouveau framework nous ont poussé à faire ce choix. La possibilité de créer des applications à la fois sur les systèmes d'exploitation Android et iOS nous ont également motivé à choisir React Native, bien que nous avons finalement axé notre application pour les appareils Android.
+Concernant la technologie utilisé, nous avons opté pour React Native, un framework d'applications mobiles créé par Facebook, permettant le développement d'applications iOS et Android. L'utilisation du langage JavaScript, que nous connaissions déjà, ainsi que la découverte d'un nouveau framework nous ont poussé à faire ce choix.
+Nous avons d'ailleurs converti notre projet en TypeScript au cours du projet, afin de pouvoir ajouter plus facilement des règles sur les types des objets et sur les paramètres des fonctions, et de pouvoir également spécifier des variables optionnelles.
+La possibilité de créer des applications à la fois sur les systèmes d'exploitation Android et iOS nous ont également motivé à choisir React Native, bien que nous avons finalement axé notre application pour les appareils Android.
 
 Le développement à été réalisé à l'aide de l'éditeur de code Visual Studio Code, et nous avons utilisé Android Studio pour émuler un smartphone et tester l'application.
 Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les fichiers du repository.
