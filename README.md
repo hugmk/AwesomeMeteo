@@ -23,7 +23,7 @@ Le développement à été réalisé à l'aide de l'éditeur de code **Visual St
 Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les fichiers du repository.
 
 
-### Données à rècupérer 
+### Données 
 Pour avoir des données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api). 
 Ainsi nous avons rècuperer les données suivantes : 
 - Température actuelle
@@ -46,4 +46,5 @@ La proposition de design **numéro 1** a été finalement choisie.
 - Comme nous étions tous les trois plus à l'aise en développement de sites web, il nous a fallu un certain temps pour nous adapter au développement mobile, et au framework React Native.
 
 ### Bilan 
+
 
