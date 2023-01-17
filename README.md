@@ -22,7 +22,13 @@ La possibilité de créer des applications à la fois sur les systèmes d'exploi
 Le développement à été réalisé à l'aide de l'éditeur de code **Visual Studio Code**, et nous avons utilisé **Android Studio** pour émuler un smartphone et tester l'application.
 Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les fichiers du repository.
 
-Pour récupérer les données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api).
+
+### Données à rècupérer 
+Pour avoir des données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api). 
+Ainsi nous avons rècuperer les données suivantes : 
+- Température actuelle
+- Vitesse du vent
+- Description météo (ex: Clouds, Sun) + icône
 
 
 ### Maquettes
