@@ -24,11 +24,11 @@ Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les
 
 
 ### Données 
-Pour avoir des données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api). 
-Ainsi nous avons rècuperer les données suivantes : 
+Pour récupérer les données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api). 
+Ainsi nous récupérons pour chaque ville les données suivantes : 
 - Température actuelle
 - Vitesse du vent
-- Description météo (ex: Clouds, Sun) + icône
+- Description météo (ex: Ciel clair, Pluie légère) + l'icône associée
 
 
 ### Maquettes
@@ -44,6 +44,7 @@ La proposition de design **numéro 1** a été finalement choisie.
 - Au début du développement du projet, nous utilisions Expo Snack, un éditeur en ligne permettant de développer un projet en React Native sur un navigateur. La plateforme a malheureusement montré ses limites lors de l'utilisation de l'API OpenWeather : les requêtes vers l’api étaient bloquées. Nous avons alors basculé vers un mode de développement plus classique, en utilisant Android Studio, où le problème de connexion à l'API était résolus. Ce changement d'environnement nous a aussi probablement éviter d'autres problèmes dans le futur, nottament lors de l'utilisation de librairies externes, par exemple pour la gestion des notifications.
 
 - Comme nous étions tous les trois plus à l'aise en développement de sites web, il nous a fallu un certain temps pour nous adapter au développement mobile, et au framework React Native.
+
 
 ### Bilan 
 
