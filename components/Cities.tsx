@@ -29,7 +29,7 @@ export default function Cities() {
         type: 'mipmap',
     },
     color: '#ff00ff',
-    linkingURI: 'yourSchemeHere://chat/jane', // See Deep Linking for more info
+    linkingURI: 'yourSchemeHere://chat/jane',
     parameters: {
         delay: 1000,
     },
