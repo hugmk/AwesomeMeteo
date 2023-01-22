@@ -58,6 +58,8 @@ export default function Cities() {
 
   const initCities = async () => {
     console.log("INITIALIZING LIST");
+    cities = [];
+    stopBackgroundTask();
     var storedCities = await Storage.storageGetAllStoredCities();
     console.log(storedCities?.length);
     for(var city in storedCities) {
@@ -95,16 +97,17 @@ export default function Cities() {
   }
 
   useEffect(() => {
+    if(isFirstLoad) {
+      initCities();
+    }
     const subscription = AppState.addEventListener('change', nextAppState => {
       if (nextAppState === 'active') {
         console.log("App is in foreground");
-          if(isFirstLoad) {
-            initCities();
-          }
-          stopBackgroundTask();
+        stopBackgroundTask();
       }
       else {
         console.log("App is in background");
+        isFirstLoad = true;
         startBackgroundTask();
       }
     });
