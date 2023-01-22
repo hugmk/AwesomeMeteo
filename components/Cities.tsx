@@ -8,8 +8,8 @@ import { ManageNotification } from '../services/ManageNotification';
 import City from '../classes/City';
 import Meteo from '../classes/Meteo';
 import Storage from '../services/Storage';
+import { WEATHER_API_KEY } from '@env';
 
-const WEATHER_API_KEY = '63a5ba9022efff0b31f27831ff862eac';
 const METEO_CALL_INTERVAL = 300000; // 5 minutes
 const updatingCities = new Subject();
 var cities: City[] = [];
