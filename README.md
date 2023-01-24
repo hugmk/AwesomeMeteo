@@ -53,7 +53,8 @@ La proposition de design **numéro 1** a été finalement choisie.
 
 ### Logo
 
-![logo_WEATHER](https://user-images.githubusercontent.com/96047669/214306276-41ac0aa8-b5fd-4cc3-8f49-7a34b121c3fa.png)
+![Logo_awesomemeteo](https://user-images.githubusercontent.com/96047669/214307214-1f0020f4-3525-4b46-922c-a2d7d4fbb02f.png)
+
 
 ### Difficultés rencontrées
 - Au début du développement du projet, nous utilisions Expo Snack, un éditeur en ligne permettant de développer un projet en React Native sur un navigateur. La plateforme a malheureusement montré ses limites lors de l'utilisation de l'API OpenWeather : les requêtes vers l’api étaient bloquées. Nous avons alors basculé vers un mode de développement plus classique, en utilisant Android Studio, où le problème de connexion à l'API était résolus. Ce changement d'environnement nous a aussi probablement éviter d'autres problèmes dans le futur, nottament lors de l'utilisation de librairies externes, par exemple pour la gestion des notifications.
