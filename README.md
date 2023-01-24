@@ -1,5 +1,17 @@
 # Projet ProgAv : AwesomeMeteo 🌦️
 
+### Introduction 
+Dans le cadre de ce projet, qui vise à créer une application mobile sur la notification météorologique pendant un changement de climat.  
+Pour réaliser ce projet nous avons tout d’abord crée un Trello qui est un outil de gestion de projet en ligne, inspiré par la méthode Kanban de Toyota. Il repose sur une organisation des projets en planches listant des cartes, chacune représentant des tâches. 
+
+Voici notre espace de travail : 
+
+![Trello](https://user-images.githubusercontent.com/96047669/214280326-e897fd93-e032-46bc-bb17-d6244974ccc6.png)
+
+Ainsi, nous avons été en mesure de suivre les progrès du projet et d'avoir une meilleure organisation. Chacun est libre de progresser dans les tâches souhaité. Par conséquent, nous sommes tenus de la progression du travail.
+
+
+
 ### Lancer l'application
 - Suivre le tuto de React Native pour mettre en place l'environnement de développement (https://reactnative.dev/docs/environment-setup), jusqu'à l'étape de création d'un projet, puisque nous allons lancer celui-ci.
 - Dans un terminal, aller dans le dossier racine du projet, et lancer la commande `npm install`.
