@@ -51,6 +51,9 @@ Ainsi nous récupérons pour chaque ville les données suivantes :
 ![design propositions](https://user-images.githubusercontent.com/103774810/212537862-f9cc762f-8c1a-4838-a494-231589672d84.png)
 La proposition de design **numéro 1** a été finalement choisie.
 
+### Logo
+
+![logo_WEATHER](https://user-images.githubusercontent.com/96047669/214306276-41ac0aa8-b5fd-4cc3-8f49-7a34b121c3fa.png)
 
 ### Difficultés rencontrées
 - Au début du développement du projet, nous utilisions Expo Snack, un éditeur en ligne permettant de développer un projet en React Native sur un navigateur. La plateforme a malheureusement montré ses limites lors de l'utilisation de l'API OpenWeather : les requêtes vers l’api étaient bloquées. Nous avons alors basculé vers un mode de développement plus classique, en utilisant Android Studio, où le problème de connexion à l'API était résolus. Ce changement d'environnement nous a aussi probablement éviter d'autres problèmes dans le futur, nottament lors de l'utilisation de librairies externes, par exemple pour la gestion des notifications.
@@ -60,7 +63,6 @@ La proposition de design **numéro 1** a été finalement choisie.
 - Enfin, nous ne sommes pas tous très confortables avec le développement, nous devons faire avec les niveaux et les connaissances de chacun. Nous nous sommes mutuellement aidés.  
 
 ### Bilan 
-
 Pour mener à bien ce projet, nous avons été en mesure de créer une application mobile pour la première fois. Ce projet nous a permis d'appliquer la théorie à la pratique, que ce soit en matière de gestion de projet ou de programmation.
 
 
