@@ -61,8 +61,6 @@ La proposition de design **numéro 1** a été finalement choisie.
 
 - Comme nous étions tous les trois plus à l'aise en développement de sites web, il nous a fallu un certain temps pour nous adapter au développement mobile, et au framework React Native.
 
-- Enfin, nous ne sommes pas tous très confortables avec le développement, nous devons faire avec les niveaux et les connaissances de chacun. Nous nous sommes mutuellement aidés.  
-
 
 ### Bilan 
 En conclusion, nous sommes satisfait du résultat de l'application, car les fonctionnalités principales de l'application fonctionnent correctement.
