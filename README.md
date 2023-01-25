@@ -1,16 +1,5 @@
 # Projet ProgAv : AwesomeMeteo 🌦️
 
-### Introduction 
-Dans le cadre de ce projet, qui vise à créer une application mobile sur la notification météorologique pendant un changement de climat.  
-Pour réaliser ce projet nous avons tout d’abord crée un Trello qui est un outil de gestion de projet en ligne, inspiré par la méthode Kanban de Toyota. Il repose sur une organisation des projets en planches listant des cartes, chacune représentant des tâches. 
-
-Voici notre espace de travail : 
-
-![Trello](https://user-images.githubusercontent.com/96047669/214280326-e897fd93-e032-46bc-bb17-d6244974ccc6.png)
-
-Ainsi, nous avons été en mesure de suivre les progrès du projet et d'avoir une meilleure organisation. Chacun est libre de progresser dans les tâches souhaité. Par conséquent, nous sommes tenus de la progression du travail.
-
-
 
 ### Lancer l'application
 - Suivre le tuto de React Native pour mettre en place l'environnement de développement (https://reactnative.dev/docs/environment-setup), jusqu'à l'étape de création d'un projet, puisque nous allons lancer celui-ci.
@@ -34,6 +23,10 @@ La possibilité de créer des applications à la fois sur les systèmes d'exploi
 Le développement à été réalisé à l'aide de l'éditeur de code **Visual Studio Code**, et nous avons utilisé **Android Studio** pour émuler un smartphone et tester l'application.
 Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les fichiers du repository.
 
+Pour faciliter la gestion de projet, nous avons utilisé Trello, un outil en ligne basé sur la méthode Kanban. Voici une capture d'écran de notre environnement de travail :
+![trello](https://user-images.githubusercontent.com/103774810/214683170-d733966c-846d-4b05-9d30-6e38b01ee6b4.png)
+Ainsi, nous créions régulièrement des nouvelles tâches en fonction de l'avancée de l'application, chaque tâche passant du statut *A faire* à *En cours* lorsque quelqu'un commençait à travailler dessus, puis vers *Terminé* lorsque la tâche était poussé vers le repository commun.
+
 
 ### Données 
 Pour récupérer les données météorologiques, nous avons utilisé l'API [Open Weather](https://openweathermap.org/api). 
@@ -51,6 +44,7 @@ Ainsi nous récupérons pour chaque ville les données suivantes :
 ![design propositions](https://user-images.githubusercontent.com/103774810/212537862-f9cc762f-8c1a-4838-a494-231589672d84.png)
 La proposition de design **numéro 1** a été finalement choisie.
 
+
 ### Logo
 
 ![Logo_awesomemeteo](https://user-images.githubusercontent.com/96047669/214307214-1f0020f4-3525-4b46-922c-a2d7d4fbb02f.png)
@@ -63,7 +57,6 @@ La proposition de design **numéro 1** a été finalement choisie.
 
 - Enfin, nous ne sommes pas tous très confortables avec le développement, nous devons faire avec les niveaux et les connaissances de chacun. Nous nous sommes mutuellement aidés.  
 
+
 ### Bilan 
 Pour mener à bien ce projet, nous avons été en mesure de créer une application mobile pour la première fois. Ce projet nous a permis d'appliquer la théorie à la pratique, que ce soit en matière de gestion de projet ou de programmation.
-
-
