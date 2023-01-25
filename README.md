@@ -25,6 +25,7 @@ Le logiciel GitHub Desktop nous a également aidé à récupérer et pousser les
 
 Pour faciliter la gestion de projet, nous avons utilisé Trello, un outil en ligne basé sur la méthode Kanban. Voici une capture d'écran de notre environnement de travail :
 ![trello](https://user-images.githubusercontent.com/103774810/214683170-d733966c-846d-4b05-9d30-6e38b01ee6b4.png)
+
 Ainsi, nous créions régulièrement des nouvelles tâches en fonction de l'avancée de l'application, chaque tâche passant du statut *A faire* à *En cours* lorsque quelqu'un commençait à travailler dessus, puis vers *Terminé* lorsque la tâche était poussé vers le repository commun.
 
 
