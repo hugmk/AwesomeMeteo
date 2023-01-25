@@ -53,7 +53,7 @@ La proposition de design **numéro 1** a été finalement choisie.
 
 
 ### Logo
-![Awesome Meteo logo](https://user-images.githubusercontent.com/103774810/214693367-770b334a-b345-40d2-a423-64043d0b2e86.png)
+![Awesome Meteo logo](https://user-images.githubusercontent.com/103774810/214693367-770b334a-b345-40d2-a423-64043d0b2e86.png =250x250)
 
 
 ### Difficultés rencontrées
