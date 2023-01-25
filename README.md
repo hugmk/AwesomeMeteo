@@ -53,7 +53,7 @@ La proposition de design **numéro 1** a été finalement choisie.
 
 
 ### Logo
-![logo](https://user-images.githubusercontent.com/103774810/214694353-6cbe2e1f-e2a9-465f-b4ea-f4006e00a1cc.png)
+![logo](https://user-images.githubusercontent.com/103774810/214694699-227f9616-f5c6-40ac-91d6-da6327781e9a.png)
 
 
 ### Difficultés rencontrées
