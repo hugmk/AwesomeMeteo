@@ -15,6 +15,12 @@ Dans le cadre de notre cours en programmation avanvée nous avons pour objectif 
 C'est pourquoi nous proposons l'application **Awesome Meteo**, une application Android, vous permettant de renseigner les villes de votre choix, de voir la météo actuelle pour ces villes, et de recevoir des notifications en cas de changement de condition climatique, de température, ou de vitesse du vent.
 
 
+### Utilisation de l'application
+1. Ajouter une ville : après une vérification, la ville est ajoutée à la liste des villes
+2. Supprimer une ville : pour supprimer une ville de liste, glisser la ville vers la gauche, et confirmer la suppression
+3. Recevoir les notifications : une fois l'application quitée, vous recevrez des notifications en cas de changement de météo pour les villes de votre liste
+
+
 ### Technologies & logiciels utilisés
 Concernant la technologie utilisé, nous avons opté pour **React Native**, un framework d'applications mobiles créé par Facebook, permettant le développement d'applications iOS et Android. L'utilisation du langage JavaScript, que nous connaissions déjà, ainsi que la découverte d'un nouveau framework nous ont poussé à faire ce choix.
 Nous avons d'ailleurs converti notre projet en **TypeScript** en cours de projet, afin de pouvoir ajouter plus facilement des règles sur les types des objets et sur les paramètres des fonctions, et de pouvoir également spécifier des variables optionnelles.
