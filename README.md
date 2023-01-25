@@ -60,4 +60,8 @@ La proposition de design **numéro 1** a été finalement choisie.
 
 
 ### Bilan 
-Pour mener à bien ce projet, nous avons été en mesure de créer une application mobile pour la première fois. Ce projet nous a permis d'appliquer la théorie à la pratique, que ce soit en matière de gestion de projet ou de programmation.
+En conclusion, nous sommes satisfait du résultat de l'application, car les fonctionnalités principales de l'application fonctionnent correctement.
+Nous pensons tout de même que des évolutions sont possibles sur cette application : 
+- l'aspect graphique peut être améliorer, par exemple en mettant en arrière plan des villes une illustration graphique du temps qu'il fait
+- les notifications peuvent être gérés par un serveur, pour ne pas avoir à lancer l'application avant de pouvoir de recevoir des notifications
+- l'ajout de la compatibilité avec les appareils iOS
