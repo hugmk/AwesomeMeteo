@@ -2,7 +2,7 @@ import PushNotification from 'react-native-push-notification';
 import City from '../classes/City';
 
 export function ManageNotification(oldCities: City[], newCities: City[]) {
-    // var demoOldCities = [
+    // var demoOldCities: City[] = [
     //   { name: 'Nice',
     //     latitude: 43.7009358,
     //     longitude: 7.2683912,
@@ -23,7 +23,7 @@ export function ManageNotification(oldCities: City[], newCities: City[]) {
     //   } 
     // ];
 
-    // var demoNewCities = [
+    // var demoNewCities: City[] = [
     //   { name: 'Nice',
     //     latitude: 43.7009358,
     //     longitude: 7.2683912,
@@ -43,7 +43,7 @@ export function ManageNotification(oldCities: City[], newCities: City[]) {
     //       windSpeed: 10.8 } 
     //   } 
     // ];  
-    //var res = compareMeteo(demoOldCities, demoNewCities);
+    // var res = compareMeteo(demoOldCities, demoNewCities);
 
     var res = compareMeteo(oldCities, newCities);
 
@@ -79,7 +79,12 @@ function compareMeteo(oldCities: City[], newCities: City[]) {
 
       else if(oldCity.meteo.temperature !== newCities[i].meteo?.temperature) {
         title = "🌡️ Changement de température à " + newCities[i].name;
-        message = "Il fait à présent " + newCities[i].meteo!.temperature + "°C à " + newCities[i].name;
+        if(oldCity.meteo.temperature < newCities[i].meteo!.temperature){
+          message = "Il fait un peu plus chaud à " + newCities[i].name + ": "+ newCities[i].meteo!.temperature + "°C";
+        }
+        else {
+          message = "Il fait un peu plus froid à " + newCities[i].name + ": "+ newCities[i].meteo!.temperature + "°C";
+        }
       }
 
       else if(oldCity.meteo.windSpeed !== newCities[i].meteo?.windSpeed) {
